@@ -9,6 +9,7 @@ import NoPage from './screens/NoPage';
 import SettingsScreen from './screens/Tabs/SettingsScreen';
 import supabaseClient from './supabaseConfig';
 import LoginScreen from './screens/LoginScreen';
+import { UserProvider } from './utils/UserProvider';
 
 function App() {
     const [session, setSession] = useState(null);
@@ -46,16 +47,18 @@ function App() {
 
     return (
         // Tabbed Screen
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<TabNavigationComponent />}>
-                    <Route index element={<HomeScreen />} />
-                    <Route path="report" element={<MeldenScreen />} />
-                    <Route path="settings" element={<SettingsScreen />} />
-                    <Route path="*" element={<NoPage />} />
-                </Route>
-            </Routes>
-        </BrowserRouter>
+        <UserProvider>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<TabNavigationComponent />}>
+                        <Route index element={<HomeScreen />} />
+                        <Route path="report" element={<MeldenScreen />} />
+                        <Route path="settings" element={<SettingsScreen />} />
+                        <Route path="*" element={<NoPage />} />
+                    </Route>
+                </Routes>
+            </BrowserRouter>
+        </UserProvider>
     );
 }
 

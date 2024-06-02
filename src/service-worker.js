@@ -14,7 +14,7 @@ import { registerRoute } from 'workbox-routing';
 import { StaleWhileRevalidate } from 'workbox-strategies';
 
 let APP_NAME = "TenantCom";
-let APP_VER = "0.0.1";
+let APP_VER = "0.1.0";
 let CACHE_NAME = APP_NAME + "-" + APP_VER;
 
 clientsClaim();
@@ -71,19 +71,4 @@ self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
     self.skipWaiting();
   }
-});
-
-self.addEventListener('activate', function(event) {
-  event.waitUntil(self.clients.claim());
-  event.waitUntil(
-      //Check cache number, clear all assets and re-add if cache number changed
-      caches.keys().then(cacheNames => {
-          return Promise.all(
-              cacheNames
-                  .filter(cacheName => (cacheName.startsWith(APP_NAME + "-")))
-                  .filter(cacheName => (cacheName !== CACHE_NAME))
-                  .map(cacheName => caches.delete(cacheName))
-          );
-      })
-  );
 });

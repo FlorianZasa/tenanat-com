@@ -1,7 +1,7 @@
 import React from 'react'
 import { Colors } from '../constants/Colors'
 
-function CardButton({ text, icon, theme}) {
+function CardButton({ text, icon, theme }) {
   return (
     <button style={{...theme, display: 'flex',
         flexDirection: 'column',
