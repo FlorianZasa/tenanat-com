@@ -36,7 +36,6 @@ function LoginScreen() {
                 <InputComponent name="tenantPassword" type="text" onChange={(e) => setTenantPassword(e.target.value)} value={tenantPassword} required={true}/>
                 <ButtonComponent onClick={login} theme={Styles.primaryButton} text={"Login"} />
             </form>
-            <SignUpScreen />
         </div>
     )
 }

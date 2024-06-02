@@ -3,6 +3,8 @@ import React from 'react'
 
 import supabaseConfig from '../../supabaseConfig'
 import { Styles } from '../../constants/Styles';
+import SignUpScreen from '../SignUpScreen';
+import ButtonComponent from '../../components/ButtonComponent';
 
 function SettingsScreen() {
 
@@ -12,7 +14,8 @@ function SettingsScreen() {
 
     return (
         <div style={Styles.screen}>
-            <button onClick={logout}>Logout</button>
+            {true && <SignUpScreen />}
+            <ButtonComponent onClick={logout} text={"Logout"} theme={Styles.primaryButton} />
         </div>
     )
 }
