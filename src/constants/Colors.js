@@ -3,5 +3,7 @@ export const Colors = {
     secondaryBG: "#9FBB44",
 
     primaryFG: "#fff",
-    secondaryFG: "#000"
+    secondaryFG: "#000",
+
+    unimportantFG: '#8f8f8f'
 }

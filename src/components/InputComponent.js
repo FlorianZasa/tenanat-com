@@ -1,19 +1,27 @@
 import {Styles} from '../constants/Styles'
-function InputComponent({ name, type, onChange, value, required=false }) {
+function InputComponent({ name, label, type, onChange, value, required=false }) {
   
     return (
-        <input
-            className='input'
-            name={name}
-            type={type}
-            value={value}
-            onChange={onChange}
-            required={required}
+        <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 8
+        }}>
+            <label htmlFor={name} style={{fontSize: '14px', fontWeight: 600}}>{label}:</label>
+            <input
+                className='input'
+                id={name}
+                name={name}
+                type={type}
+                value={value}
+                onChange={onChange}
+                required={required}
 
-            placeholder={name.toUpperCase()+"..."}
+                placeholder={`${label} eingeben...`}
 
-            style={Styles.input}
-        ></input>
+                style={Styles.input}
+            ></input>
+        </div>
     )
 }
 

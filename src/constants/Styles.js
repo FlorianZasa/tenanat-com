@@ -30,8 +30,10 @@ export const Styles = {
       alignItems: 'center',
       justifyContent: 'center',
       height: '3rem',
-      borderRadius: 10
-
+      borderRadius: 10,
+      fontSize: '16px',
+      fontWeight: '600',
+      gap: '1rem'
     }
 };
 
