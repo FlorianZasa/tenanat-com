@@ -1,0 +1,10 @@
+
+.navBar {
+    padding-bottom: env(safe-area-inset-bottom); 
+}
+.navLink {
+    text-decoration: none;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
