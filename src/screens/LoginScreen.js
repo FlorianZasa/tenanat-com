@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import supabaseConfig from '../supabaseConfig'
 import SignUpScreen from './SignUpScreen';
 import { Styles } from '../constants/Styles';
+import InputComponent from '../components/InputComponent';
+import ButtonComponent from '../components/ButtonComponent';
 
 function LoginScreen() {
     const [tenantId, setTenantId] = useState("");
@@ -29,13 +31,11 @@ function LoginScreen() {
         <div style={{...Styles.screen, display: 'flex', flexDirection: 'column', flex: 1}}>
           <h1>Willkommen bei TenantCom</h1>
 
-            <form>
-                <input name="tenantId" style={{width: '100%'}} onChange={(e) => setTenantId(e.target.value)} value={tenantId} />
-                <input name="tenantPassword" style={{width: '100%'}} onChange={(e) => setTenantPassword(e.target.value)} value={tenantPassword} />
+            <form style={Styles.form}>
+                <InputComponent name="tenantId" type="text" onChange={(e) => setTenantId(e.target.value)} value={tenantId} required={true}/>
+                <InputComponent name="tenantPassword" type="text" onChange={(e) => setTenantPassword(e.target.value)} value={tenantPassword} required={true}/>
+                <ButtonComponent onClick={login} theme={Styles.primaryButton} text={"Login"} />
             </form>
-            <button onClick={login}>Login</button>
-
-
             <SignUpScreen />
         </div>
     )

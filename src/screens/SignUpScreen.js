@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import supabaseConfig from '../supabaseConfig'
 import { Styles } from '../constants/Styles';
+import ButtonComponent from '../components/ButtonComponent';
 
 function SignUpScreen() {
     const [user, setUser] = useState(null);
@@ -40,7 +41,7 @@ function SignUpScreen() {
 
     return (
         <div style={Styles.screen}>
-            <button onClick={prepareUser}>Registrier neuen Mieter</button>
+            <ButtonComponent onClick={prepareUser} text={"Neuen Mieter erstellen"} theme={Styles.secondaryButton} />
             {tenantId && (
                 <div>
                     <p>Mieter ID: {tenantId}</p>

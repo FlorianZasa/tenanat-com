@@ -1,6 +1,7 @@
 {
   "name": "tenant-com--js-pwa",
   "version": "0.1.0",
+  "homepage": "/tenanat-com",  
   "private": true,
   "dependencies": {
     "@supabase/auth-ui-react": "^0.4.7",

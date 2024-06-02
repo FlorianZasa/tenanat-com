@@ -1,6 +1,6 @@
 export const Colors = {
-    primaryBG: "#416ff0",
-    secondaryBG: "green",
+    primaryBG: "#6044bb",
+    secondaryBG: "#9FBB44",
 
     primaryFG: "#fff",
     secondaryFG: "#000"
