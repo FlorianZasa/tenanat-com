@@ -9,7 +9,8 @@ function LoginScreen() {
     const [tenantId, setTenantId] = useState("");
     const [tenantPassword, setTenantPassword] = useState("");
 
-    async function login() {  
+    async function login(event) {
+        event.preventDefault() 
         try {
             const { user, error } = await supabaseConfig.auth.signInWithPassword({
                 email: tenantId+"@tenant.com",
@@ -33,7 +34,7 @@ function LoginScreen() {
 
             <form style={Styles.form}>
                 <InputComponent name="tenantId" type="text" onChange={(e) => setTenantId(e.target.value)} value={tenantId} required={true}/>
-                <InputComponent name="tenantPassword" type="text" onChange={(e) => setTenantPassword(e.target.value)} value={tenantPassword} required={true}/>
+                <InputComponent name="tenantPassword" type="password" onChange={(e) => setTenantPassword(e.target.value)} value={tenantPassword} required={true}/>
                 <ButtonComponent onClick={login} theme={Styles.primaryButton} text={"Login"} />
             </form>
         </div>

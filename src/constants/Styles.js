@@ -1,3 +1,4 @@
+import { BiFontSize } from "react-icons/bi";
 import { Colors } from "./Colors";
 
 export const Styles = {
@@ -20,7 +21,8 @@ export const Styles = {
     },
     input: {
       height: '2rem',
-      borderRadius: 10
+      borderRadius: 10,
+      fontSize: '14px'
     },
     button: {
       width: '100%',
