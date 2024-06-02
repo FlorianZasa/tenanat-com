@@ -1,6 +1,7 @@
 {
   "short_name": "Tenant",
   "name": "TenantCom",
+  "version": "1.0.0",
   "icons": [
     {
       "src": "favicon.ico",
