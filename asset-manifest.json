@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/tenanat-com/static/css/main.7add393b.css",
-    "main.js": "/tenanat-com/static/js/main.9b1af5ce.js",
+    "main.js": "/tenanat-com/static/js/main.d43f1b70.js",
     "static/js/952.15a2b931.chunk.js": "/tenanat-com/static/js/952.15a2b931.chunk.js",
     "static/js/453.d138a976.chunk.js": "/tenanat-com/static/js/453.d138a976.chunk.js",
     "service-worker.js": "/tenanat-com/service-worker.js",
     "index.html": "/tenanat-com/index.html",
     "main.7add393b.css.map": "/tenanat-com/static/css/main.7add393b.css.map",
-    "main.9b1af5ce.js.map": "/tenanat-com/static/js/main.9b1af5ce.js.map",
+    "main.d43f1b70.js.map": "/tenanat-com/static/js/main.d43f1b70.js.map",
     "952.15a2b931.chunk.js.map": "/tenanat-com/static/js/952.15a2b931.chunk.js.map",
     "453.d138a976.chunk.js.map": "/tenanat-com/static/js/453.d138a976.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7add393b.css",
-    "static/js/main.9b1af5ce.js"
+    "static/js/main.d43f1b70.js"
   ]
 }
