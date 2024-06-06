@@ -57,6 +57,7 @@ export function UserProvider({ children }) {
     };
 
     const logout = async () => {
+        console.log("Logging out user");
         const { error } = await supabaseConfig.auth.signOut();
         if (error) {
             console.error('Error logging out:', error.message);

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Auth } from '@supabase/auth-ui-react';
 import { ThemeSupa } from '@supabase/auth-ui-shared';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import TabNavigationComponent from './components/navigation/TabNavigationComponent';
 import HomeScreen from './screens/Tabs/HomeScreen';
 import MeldenScreen from './screens/Tabs/MeldenScreen';
@@ -37,25 +37,27 @@ function App() {
         return <div>Loading...</div>;
     }
 
-    if (!session) {
-      return (
-        <div>
-          <LoginScreen />
-        </div>
-      );
-    }
-
     return (
-        // Tabbed Screen
         <UserProvider>
             <BrowserRouter>
                 <Routes>
-                    <Route path="/" element={<TabNavigationComponent />}>
-                        <Route index element={<HomeScreen />} />
-                        <Route path="report" element={<MeldenScreen />} />
-                        <Route path="settings" element={<SettingsScreen />} />
-                        <Route path="*" element={<NoPage />} />
-                    </Route>
+                    {!session ? (
+                        <>
+                            <Route path="/app/login" element={<LoginScreen />} />
+                            <Route path="*" element={<Navigate to="/app/login" replace />} />
+                        </>
+                    ) : (
+                        <>
+                            <Route path="/app" element={<Navigate to="/app/home" replace />} />
+                            <Route path="/app" element={<TabNavigationComponent />}>
+                                <Route index element={<Navigate to="home" replace />} />
+                                <Route path="home" element={<HomeScreen />} />
+                                <Route path="report" element={<MeldenScreen />} />
+                                <Route path="settings" element={<SettingsScreen />} />
+                                <Route path="*" element={<NoPage />} />
+                            </Route>
+                        </>
+                    )}
                 </Routes>
             </BrowserRouter>
         </UserProvider>
